@@ -21,7 +21,7 @@ class Display_Sensor_1(tk.Tk):
         
         self.canvas=Canvas(self, width=640, height=480)
         self.canvas.place(x=-2,y=-2)
-        self.img= PhotoImage(file="hug.png")
+        self.img= PhotoImage(file="/home/pi/catkin_ws/src/bharat/Defianz-codes/hug.png")
         self.canvas.create_image(2,2,image=self.img,anchor=NW)
      
         # change the background color to black
