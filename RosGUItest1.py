@@ -3,13 +3,13 @@ from tkinter import ttk
 from tkinter import *
 import rospy
 import time
-from std_msgs.msg import Int16
+from bharat.msg import UI_display
 
 class Display_Sensor_1(tk.Tk):
 
     def __init__(self):
         super().__init__()
-        self.sub = rospy.Subscriber("/front_angle_low_res", Int16, self.callback_sensor_1)
+        self.sub = rospy.Subscriber("/chatter", UI_display, self.callback_sensor_1)
         self.sensor_1_data = tk.IntVar()
 
         # configure the root window
@@ -32,9 +32,7 @@ class Display_Sensor_1(tk.Tk):
         self.label.after(1000, self.update)     # schedule an update every 1 second
 
     def callback_sensor_1(self, data):   
-        self.sensor_1_data = data.data
-        #print(self.sensor_1_data)
-        #rospy.loginfo(rospy.get_caller_id() + "I heard %s", data.data)
+        self.sensor_1_data = data.vel
 
     def get_sensor_data(self):
         return self.sensor_1_data
