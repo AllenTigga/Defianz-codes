@@ -1,0 +1,8 @@
+float32 vel
+float32 rpm
+float32 battery_voltage
+float32 motor_temp
+float32 accumulator_temp
+float32 battery_current
+float32 motor_controller_temp
+bool lv_battery_status
