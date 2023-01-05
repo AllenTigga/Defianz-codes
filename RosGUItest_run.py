@@ -34,7 +34,7 @@ class Display_Sensor_1(tk.Tk):
 
     def callback(self, data):   
         self.rpm_data = data.rpm
-        self.vel_data=data.rpm
+        self.vel_data = data.rpm
 
     def get_rpm(self):
         return self.rpm_data
