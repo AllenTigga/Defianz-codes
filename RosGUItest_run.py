@@ -32,7 +32,7 @@ class Display_Sensor(tk.Tk):
         self.rpm_label.after(1000, self.update)     # schedule an update every 1 second
 
     def callback(self, data):   
-        self.rpm_data = data.vel
+        self.rpm_data = data.rpm
 
     def rpm_sensor_data(self):
         return self.rpm_data
