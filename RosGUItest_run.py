@@ -10,7 +10,7 @@ class Display_Sensor(tk.Tk):
     def __init__(self):
         super().__init__()
         self.sub = rospy.Subscriber("/chatter", UI_display, self.callback)
-        self.sensor_1_data = tk.IntVar()
+        self.rpm_data = tk.IntVar()
 
         # configure the root window
         self.title('Sensor 1 Data')
