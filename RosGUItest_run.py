@@ -5,7 +5,7 @@ import rospy
 import time
 from bharat.msg import UI_display
 
-class Display_Sensor_1(tk.Tk):
+class Display_Sensor(tk.Tk):
 
     def __init__(self):
         super().__init__()
@@ -24,29 +24,25 @@ class Display_Sensor_1(tk.Tk):
         self.img= PhotoImage(file="/home/pi/catkin_ws/src/bharat/Defianz-codes/hug.png")
         self.canvas.create_image(2,2,image=self.img,anchor=NW)
      
+        # change the background color to black
         self.style = ttk.Style(self)
         self.style.configure('TLabel', background='black', foreground='red')
-        self.rpm_label = ttk.Label(self, text=self.get_rpm(), font=('Digital-7', 20))
-        self.rpm_label.place(x=180,y=130)
-        self.vel_label = ttk.Label(self, text=self.get_vel(), font=('Digital-7', 20))
-        self.vel_label.place(x=180,y=180)
-        self.rpm_label.after(1000, self.update)
+        self.rpm_label = ttk.Label(self, text=self.rpm_sensor_data(), font=('Digital-7', 20))
+        self.rpm_label.place(x=250,y=500)
+        self.rpm_label.after(1000, self.update)     # schedule an update every 1 second
 
     def callback(self, data):   
-        self.rpm_data = data.rpm
-        self.vel_data = data.rpm
+        self.rpm_data = data.vel
 
-    def get_rpm(self):
+    def rpm_sensor_data(self):
         return self.rpm_data
-    def get_vel(self):
-        return self.vel_data
+
     def update(self):
         """ update the label every 1 second """
-        self.rpm_label.configure(text=self.get_rpm())
-        self.vel_label.configure(text=self.get_vel())
-        self.rpm_label.after(1000, self.update)
+        self.rpm_label.configure(text=self.rpm_sensor_data())
+        self.rpm_label.after(1000, self.update)     # schedule another timer
  
 if __name__ == "__main__":
     rospy.init_node('listener', anonymous=True)
-    sensor = Display_Sensor_1()
+    sensor = Display_Sensor()
     sensor.mainloop()
