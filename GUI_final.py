@@ -23,6 +23,30 @@ class Display_Sensor(tk.Tk):
         #int8 dtc_1
         #int8 dtc_2
         #bool lv_battery_status
+# _0label=canvas.create_text(x*.33,55,text="0",font=('Norwester',35),fill='red')
+# _0needle=canvas.create_line(x*.33, 19, x*.33, 33, fill="green", width=4)
+# _1label=canvas.create_text(x*.45,55,text="1",font=('Norwester',35),fill='red')
+# _1needle=canvas.create_line(x*.45, 19, x*.45, 33, fill="green", width=4)
+# _2label=canvas.create_text(x*.57,55,text="2",font=('Norwester',35),fill='red')
+# _2needle=canvas.create_line(x*.57, 19, x*.57, 33, fill="green", width=4)
+# _3label=canvas.create_text(x*.69,55,text="3",font=('Norwester',35),fill='red')
+# _3needle=canvas.create_line(x*.69, 19, x*.69, 33, fill="green", width=4)
+# _4label=canvas.create_text(x*.81,55,text="4",font=('Norwester',35),fill='red')
+# _4needle=canvas.create_line(x*.81, 19, x*.81, 33, fill="green", width=4)
+# _5label=canvas.create_text(x*.93,55,text="5",font=('Norwester',35),fill='red')
+# _5needle=canvas.create_line(x*.93, 19, x*.93, 33, fill="green", width=4)
+
+########____________#########
+
+# my_img= PhotoImage(file="hug.png")
+# Ips=canvas.create_image(2,2,image=my_img,anchor=NW)
+# character = PhotoImage(file="img.png")
+#
+# for x in range(0,170):
+#     canvas.move(Ips,0,0)
+#     root.update()
+#     time.sleep(0.005)
+# canvas.delete(Ips)
 
         # configure the root window
         self.title('Sensor 1 Data')
