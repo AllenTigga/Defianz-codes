@@ -42,7 +42,8 @@ class Display_Sensor(tk.Tk):
         	self.canvas.move(self.Ips,0,0)
         	self.update()
         	time.sleep(0.1)
-        self.canvas.delete(self.Ips)
+        self.canvas.move(self.Ips,700,0)
+        #self.canvas.delete(self.Ips)
         
         self.img= PhotoImage(file="/home/pi/catkin_ws/src/bharat/Defianz-codes/Final_display.png")
         self.canvas.create_image(2,2,image=self.img,anchor=NW)
