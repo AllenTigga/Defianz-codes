@@ -86,9 +86,6 @@ class Display_Sensor(tk.Tk):
         
         self.rpm_label.after(1000, self._update)     # schedule an update every 1 second
     
-    
-    
-
     def callback(self, data):   
         self.rpm_data = data.rpm
         self.vel_data = data.vel
